@@ -1,0 +1,29 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    AppProyecto - Propietarios
+    
+{% endblock %}
+
+{% block titulo %}
+    LISTA DE PROPIETARIOS
+{% endblock %}
+    
+{% block contenido %}
+
+    {% for propietario in propietarios %}
+        <li>
+            {{ propietario.nombre }} {{ propietario.apellido }} 
+        </li>
+
+        <a style="border: solid 1px;" class="w3-bar-item w3-button w3-padding-large" href="{% url 'editarPropietario' propietario.id %}">Editar</a>
+        <a style="border: solid 1px;" class="w3-bar-item w3-button w3-padding-large" href="{% url 'eliminarPropietario' propietario.id %}">Eliminar</a>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{{ mensaje }}

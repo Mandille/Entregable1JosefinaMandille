@@ -1,0 +1,17 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Propietarios
+{% endblock %}
+
+{% block titulo %}
+    PROPIETARIOS
+{% endblock %}
+
+{% block botones %}
+    <a style="border: solid 1px;" href="{% url 'propietariosFormulario' %}" class="w3-bar-item w3-button w3-padding-large">Agregar</a>
+    <a style="border: solid 1px;" href="{%url 'listarPropietarios' %}" class="w3-bar-item w3-button w3-padding-large">Lista</a>
+
+{% endblock %}

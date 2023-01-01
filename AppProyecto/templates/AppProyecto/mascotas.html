@@ -1,0 +1,23 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Mascotas
+{% endblock %}
+
+{% block titulo %}
+    MASCOTAS
+{% endblock %}
+
+{% block parrafo %}
+    Aquí podrás encontrar información sobre tus mascotas
+{% endblock %}
+
+{% block botones %}
+    
+    <a style="border: solid 1px;" href="{%url 'mascotasFormulario' %}" class="w3-bar-item w3-button w3-padding-large">Agregar Mascota</a>
+    <a style="border: solid 1px;" href="{%url 'listarMascotas' %}" class="w3-bar-item w3-button w3-padding-large">Lista de mascotas</a>
+    <a style="border: solid 1px;" href="{%url 'mascotasBuscar' %}" class="w3-bar-item w3-button w3-padding-large">Buscar Mascotas</a>
+
+{% endblock %} 

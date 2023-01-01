@@ -1,0 +1,31 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    AppProyecto - Propietarios
+{% endblock %}
+
+{% block titulo %}
+    AGREGAR PROPIETARIO
+{% endblock %}
+
+
+
+{% block parrafo %}
+    <p>Complete todos los campos</p>
+{% endblock %}
+
+
+
+
+{% block contenido %}
+    <form action="{% url 'propietariosFormulario' %}" method="POST"> {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div style="text-align: center;">
+            <input type="submit" value="Agregar Propietario" >    
+        </div>
+    </form>
+{% endblock %}

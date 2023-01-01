@@ -1,0 +1,33 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Mascotas
+{% endblock %}
+
+{% block titulo %}
+    EDICIÓN DE MASCOTAS
+{% endblock %}
+
+
+
+{% block parrafo %}
+    <p>Formulario de edición de Mascotas</p>
+{% endblock %}
+
+
+
+{% block contenido %}
+    <form action="{% url 'editarMascota' mascota.id %}" method="POST"> {% csrf_token %}
+        
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <div style="text-align: center;">
+            <input type="submit" value="Editar Mascota" >
+        </div>
+        
+    </form>
+{% endblock %}

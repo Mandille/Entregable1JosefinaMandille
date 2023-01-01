@@ -1,0 +1,27 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Buscar Mascotas
+{% endblock %}
+
+{% block titulo %}
+    BUSCAR MASCOTAS
+{% endblock %}
+
+{% block parrafo %}
+    Ingresa el numero de registro de tu mascota.
+{% endblock %}
+
+{% block contenido %}
+    
+    <form action="{% url 'numeroRegistro' %}" method="GET">
+
+        <input type="text" name="numeroRegistro" id="numeroRegistro" placeholder="INSERTE NUMERO DE REGISTRO">
+
+        <input type="submit" value="Buscar Mascota">
+
+    </form>
+    
+{% endblock %}

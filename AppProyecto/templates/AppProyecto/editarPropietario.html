@@ -1,0 +1,33 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Propietarios
+{% endblock %}
+
+{% block titulo %}
+    EDICION DE PROPIETARIOS
+{% endblock %}
+
+
+
+{% block parrafo %}
+    <p>Formulario de edición de propietarios</p>
+{% endblock %}
+
+
+
+{% block contenido %}
+    <form action="{% url 'editarPropietario' propietario.id %}" method="POST"> {% csrf_token %}
+        
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <div style="text-align: center;">
+            <input type="submit" value="Editar Propietario" >
+        </div>
+        
+    </form>
+{% endblock %}

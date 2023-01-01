@@ -1,0 +1,28 @@
+{% extends "AppProyecto/index.html" %}
+
+{% load static %}
+
+{% block titulohead %}
+    Censo2023 - Lista de Mascotas
+{% endblock %}
+
+{% block titulo %}
+    LISTA DE MASCOTAS
+{% endblock %}
+    
+{% block contenido %}
+
+    {% for mascota in mascotas %}
+        <li>
+            {{ mascota.nombre }} - {{ mascota.numeroRegistro }} 
+        </li>
+
+        <a style="border: solid 1px;" class="w3-bar-item w3-button w3-padding-large" href="{% url 'editarMascota' mascota.id %}">Editar</a>
+        <a style="border: solid 1px;" class="w3-bar-item w3-button w3-padding-large" href="{% url 'eliminarMascota' mascota.id %}">Eliminar</a>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{{ mensaje }}
